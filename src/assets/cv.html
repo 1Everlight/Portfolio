@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - TCHAGAFOU Fadèle - Ingénieur Logiciel</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        :root {
+            --primary: #2563eb;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --bg-light: #f8fafc;
+            --accent: #3b82f6;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #e2e8f0;
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .cv-container {
+            width: 210mm;
+            min-height: 297mm;
+            background: #fff;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: 75mm 1fr;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            background-color: var(--bg-light);
+            padding: 40px 30px;
+            border-right: 1px solid var(--border);
+        }
+
+        .main-content {
+            padding: 40px;
+            background-color: #fff;
+        }
+
+        /* Títulos */
+        h2 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--border);
+            margin-top: 30px;
+        }
+        
+        .sidebar h2 {
+            font-size: 1.1rem;
+        }
+
+        .sidebar h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .main-content h2:first-of-type {
+            margin-top: 40px;
+        }
+
+        /* HEADER INFO */
+        .header {
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--text-main);
+            line-height: 1.1;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .header .title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        /* SUMMARY */
+        .summary {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        /* CONTACT INFO */
+        .contact-list {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .contact-list li {
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-muted);
+            word-break: break-word;
+        }
+
+        .contact-list a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .icon {
+            font-weight: bold;
+            color: var(--primary);
+            width: 20px;
+        }
+
+        /* SKILLS */
+        .skill-group {
+            margin-bottom: 20px;
+        }
+
+        .skill-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tag {
+            background-color: #fff;
+            border: 1px solid var(--border);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* EXPERIENCE & PROJECTS */
+        .item {
+            margin-bottom: 25px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .item-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .item-subtitle {
+            font-size: 0.95rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .item-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .item-desc {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        ul.bullet-list {
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        ul.bullet-list li {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
+
+        /* PRINT CONFIG */
+        @media print {
+            body {
+                padding: 0;
+                background-color: #fff;
+            }
+            .cv-container {
+                box-shadow: none;
+                width: 210mm;
+                height: 297mm;
+            }
+            .print-btn {
+                display: none !important;
+            }
+        }
+
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-family: inherit;
+        }
+        .print-btn:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="print-btn" onclick="window.print()">🖨️ Télécharger PDF</button>
+
+    <div class="cv-container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            
+            <h2>Contact</h2>
+            <ul class="contact-list">
+                <li><span class="icon">📍</span> Lomé, Togo (Agoè-Dikamé)</li>
+                <li><span class="icon">📞</span> +228 71391266</li>
+                <li><span class="icon">✉️</span> <a href="mailto:fadeletchagafou7@gmail.com">fadeletchagafou7@gmail.com</a></li>
+                <li><span class="icon">🔗</span> <a href="https://www.linkedin.com/in/fadèle-tchagafou-218436318/">LinkedIn</a></li>
+                <li><span class="icon">🐙</span> <a href="https://github.com/1Everlight">GitHub</a></li>
+                <li><span class="icon">🌍</span> <a href="#">Portfolio Web</a></li>
+            </ul>
+
+            <h2>Compétences Techniques</h2>
+            
+            <div class="skill-group">
+                <div class="skill-title">Langages</div>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">PHP</span>
+                    <span class="tag">Dart</span>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-title">Frameworks</div>
+                <div class="tags">
+                    <span class="tag">Angular</span>
+                    <span class="tag">Django</span>
+                    <span class="tag">Laravel</span>
+                    <span class="tag">Flutter</span>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-title">Bases de données</div>
+                <div class="tags">
+                    <span class="tag">MySQL</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">SQL Server</span>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-title">Outils</div>
+                <div class="tags">
+                    <span class="tag">Git & GitHub</span>
+                    <span class="tag">Postman</span>
+                    <span class="tag">Figma</span>
+                    <span class="tag">Angular CLI</span>
+                    <span class="tag">VS Code</span>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-title">Autres</div>
+                <div class="tags">
+                    <span class="tag">DevOps</span>
+                    <span class="tag">UI/UX Design</span>
+                    <span class="tag">Clean Architecture</span>
+                    <span class="tag">Agile/Scrum</span>
+                </div>
+            </div>
+
+            <h2>Langues</h2>
+            <div class="skill-group">
+                <div class="tags">
+                    <span class="tag">Français (Courant)</span>
+                    <span class="tag">Anglais (Technique)</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <header class="header">
+                <h1>Fadèle<br>TCHAGAFOU</h1>
+                <div class="title">Ingénieur Logiciel Junior</div>
+            </header>
+
+            <p class="summary">
+                Futur Ingénieur en Génie Logiciel passionné par l'écosystème web et mobile. Rigoureux, analytique et orienté solution, je conçois et développe des architectures logicielles propres, performantes et scalables. Fortes compétences en développement full-stack et modélisation de systèmes d'information.
+            </p>
+
+            <h2>Formation</h2>
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-title">Ingénieur des travaux informatiques (Génie Logiciel et S.I.)</div>
+                    <div class="item-date">2023 – 2026</div>
+                </div>
+                <div class="item-subtitle">IAI-TOGO (Institut Africain d'Informatique)</div>
+                <p class="item-desc">
+                    Excellence académique en algorithmie, conception de systèmes d'information, bases de données avancées, et ingénierie logicielle.
+                </p>
+            </div>
+
+            <h2>Projet Académique & Technique</h2>
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-title">Application de Gestion "Risque Crédit"</div>
+                    <div class="item-date">2023 - Présent</div>
+                </div>
+                <!-- <div class="item-subtitle">Full-Stack Developer</div> -->
+                <p class="item-desc">
+                    Développement de bout en bout d'une plateforme SaaS financière permettant de gérer et de suivre des prêts multiples pour des établissements de crédit.
+                </p>
+                <ul class="bullet-list">
+                    <li>Conception d'un tableau de bord analytique dynamique pour le suivi des statistiques clients en temps réel.</li>
+                    <li>Modélisation robuste d'une base de données relationnelle pour le suivi rigoureux des statuts de crédit (validation, échéances).</li>
+                    <li>Mise en œuvre d'une architecture propre séparant le back-end et le front-end.</li>
+                    <li>Réalisation d'une UI/UX moderne, fluide et responsive.</li>
+                </ul>
+                <div class="tags" style="margin-top: 10px;">
+                    <span class="tag">Django</span>
+                    <span class="tag">Angular</span>
+                    <span class="tag">PostgreSQL</span>
+                </div>
+            </div>
+
+            <h2>Projets Complémentaires</h2>
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-title">Portfolio Professionnel Angular</div>
+                    <div class="item-date">2026</div>
+                </div>
+                <p class="item-desc">
+                    Création d'un portfolio dynamique (Single Page Application) performant. Intégration d'un système multilingue (Signaux) et bascule de thèmes (Clair/Sombre) sans rechargement. Interface optimisée mobile-first avec SCSS moderne.
+                </p>
+                <div class="tags" style="margin-top: 10px;">
+                    <span class="tag">Angular 17+</span>
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">SCSS</span>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>

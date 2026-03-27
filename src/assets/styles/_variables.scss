@@ -1,0 +1,50 @@
+// _variables.scss
+$color-bg-light: #f8fafc;
+$color-bg-dark: #0f172a;
+
+$color-surface-light: #ffffff;
+$color-surface-dark: #1e293b;
+
+$color-text-light: #334155;
+$color-text-dark: #cbd5e1;
+
+$color-text-muted-light: #64748b;
+$color-text-muted-dark: #94a3b8;
+
+$color-primary: #3b82f6;
+$color-primary-hover: #2563eb;
+$color-accent: #10b981;
+
+$font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+$font-mono: 'Fira Code', monospace;
+
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 16px;
+$border-radius-full: 9999px;
+
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+$transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+:root {
+  --bg-color: #{$color-bg-light};
+  --surface-color: #{$color-surface-light};
+  --text-color: #{$color-text-light};
+  --text-muted: #{$color-text-muted-light};
+  --primary-color: #{$color-primary};
+  --accent-color: #{$color-accent};
+  --border-color: #e2e8f0;
+}
+
+[data-theme='dark'] {
+  --bg-color: #{$color-bg-dark};
+  --surface-color: #{$color-surface-dark};
+  --text-color: #{$color-text-dark};
+  --text-muted: #{$color-text-muted-dark};
+  --primary-color: #{$color-primary};
+  --accent-color: #{$color-accent};
+  --border-color: #334155;
+}
