@@ -1,395 +1,430 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - TCHAGAFOU Fadèle - Ingénieur Logiciel</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV – TCHAGAFOU Fadèle</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        :root {
-            --primary: #2563eb;
-            --text-main: #1e293b;
-            --text-muted: #475569;
-            --bg-light: #f8fafc;
-            --accent: #3b82f6;
-            --border: #e2e8f0;
-        }
+    :root {
+      --ink:          #0f172a; /* Slate 900 (Bleu nuit très sombre) */
+      --accent:       #2563eb; /* Blue 600 (Bleu royal) */
+      --accent-light: #3b82f6; /* Blue 500 (Bleu vif) */
+      --muted:        #64748b; /* Slate 500 (Gris neutre élégant) */
+      --bg-side:      #f8fafc; /* Slate 50 (Gris perle très clair) */
+      --rule:         #e2e8f0; /* Slate 200 (Bordure discrète) */
+      --white:        #ffffff;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
+    html, body {
+      background: #cbd5e1; /* Slate 300 pour le fond hors-page */
+      font-family: 'DM Sans', sans-serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
 
-        body {
-            background-color: #e2e8f0;
-            color: var(--text-main);
-            display: flex;
-            justify-content: center;
-            padding: 2rem;
-        }
+    .page {
+      width: 210mm;
+      height: 297mm;
+      margin: 20px auto;
+      background: var(--white);
+      display: grid;
+      grid-template-columns: 67mm 1fr;
+      overflow: hidden;
+      box-shadow: 0 10px 50px rgba(0,0,0,.22);
+    }
 
-        .cv-container {
-            width: 210mm;
-            min-height: 297mm;
-            background: #fff;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            display: grid;
-            grid-template-columns: 75mm 1fr;
-            overflow: hidden;
-        }
+    /* ════ SIDEBAR ════ */
+    .sidebar {
+      background: var(--bg-side);
+      border-right: 2px solid var(--rule);
+      padding: 30px 22px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      height: 297mm;
+      overflow: hidden;
+    }
 
-        .sidebar {
-            background-color: var(--bg-light);
-            padding: 40px 30px;
-            border-right: 1px solid var(--border);
-        }
+    .av-wrap { text-align: center; }
+    .av-circle {
+      width: 75px; height: 75px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      margin: 0 auto 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .av-circle span {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px; font-weight: 900; color: #fff; letter-spacing: -1px;
+    }
+    .av-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px; font-weight: 900;
+      color: var(--ink); text-transform: uppercase;
+      letter-spacing: .5px; line-height: 1.2;
+    }
+    .av-badge {
+      display: inline-block; margin-top: 6px;
+      background: var(--accent); color: #fff;
+      font-size: 9px; font-weight: 600;
+      letter-spacing: 1.2px; text-transform: uppercase;
+      padding: 4px 12px; border-radius: 3px;
+    }
 
-        .main-content {
-            padding: 40px;
-            background-color: #fff;
-        }
+    .s-hd {
+      font-size: 10px; font-weight: 800;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 4px; margin-bottom: 10px;
+    }
 
-        /* Títulos */
-        h2 {
-            font-size: 1.25rem;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 20px;
-            padding-bottom: 5px;
-            border-bottom: 2px solid var(--border);
-            margin-top: 30px;
-        }
-        
-        .sidebar h2 {
-            font-size: 1.1rem;
-        }
+    .c-row {
+      display: flex; align-items: flex-start;
+      gap: 8px; margin-bottom: 8px;
+      font-size: 10px; color: var(--ink); line-height: 1.4;
+    }
+    .c-row:last-child { margin-bottom: 0; }
+    .c-icon {
+      flex-shrink: 0; width: 16px; height: 16px;
+      border-radius: 50%; background: var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 1px;
+    }
+    .c-icon svg { width: 9px; height: 9px; fill: #fff; }
+    .c-row a { color: var(--accent-light); text-decoration: none; word-break: break-all; }
+    .c-row .faint { color: var(--muted); font-style: italic; }
 
-        .sidebar h2:first-of-type {
-            margin-top: 0;
-        }
+    .sk-label {
+      font-size: 9px; font-weight: 700; color: var(--ink);
+      text-transform: uppercase; letter-spacing: .5px; margin-bottom: 5px;
+    }
+    .sk-group { margin-bottom: 10px; }
+    .sk-group:last-child { margin-bottom: 0; }
+    .tags { display: flex; flex-wrap: wrap; gap: 4px; }
+    .tag {
+      font-size: 9px; font-weight: 600;
+      padding: 3px 7px; border-radius: 3px;
+      background: var(--white); border: 1px solid var(--rule); color: var(--ink);
+    }
+    .tag.hi { background: var(--accent); color: #fff; border-color: var(--accent); }
 
-        .main-content h2:first-of-type {
-            margin-top: 40px;
-        }
+    .edu-deg  { font-size: 10.5px; font-weight: 800; color: var(--ink); }
+    .edu-spec { font-size: 9.5px; color: var(--muted); margin-top: 2px; }
+    .edu-sch  { font-size: 10px; color: var(--accent-light); font-weight: 700; margin-top: 4px; }
+    .edu-per  {
+      display: inline-block; margin-top: 4px;
+      background: var(--accent); color: #fff;
+      font-size: 8.5px; padding: 3px 8px; border-radius: 3px;
+    }
 
-        /* HEADER INFO */
-        .header {
-            margin-bottom: 20px;
-        }
+    .lang-row {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 7px; font-size: 10px; color: var(--ink); font-weight: 500;
+    }
+    .lang-row:last-child { margin-bottom: 0; }
+    .dots { display: flex; gap: 4px; }
+    .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--rule); }
+    .dot.on { background: var(--accent); }
 
-        .header h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: var(--text-main);
-            line-height: 1.1;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
+    /* ════ MAIN ════ */
+    .main {
+      padding: 34px 28px 40px 28px;
+      display: flex; flex-direction: column;
+      justify-content: space-between; /* Permet de bien répartir les blocs sur tout l'espace disponible */
+      height: 297mm; overflow: hidden;
+    }
 
-        .header .title {
-            font-size: 1.5rem;
-            color: var(--primary);
-            font-weight: 500;
-            letter-spacing: 1px;
-        }
+    .mh { border-bottom: 3px solid var(--ink); padding-bottom: 10px; margin-bottom: 5px; }
+    .mh-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px; font-weight: 900;
+      color: var(--ink); line-height: 1.1; letter-spacing: -.5px;
+    }
+    .mh-name span { color: var(--accent); }
+    .mh-sub {
+      margin-top: 6px;
+      font-size: 10px; font-weight: 600;
+      color: var(--muted); letter-spacing: 1px; text-transform: uppercase;
+    }
 
-        /* SUMMARY */
-        .summary {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: var(--text-muted);
-            margin-bottom: 30px;
-            text-align: justify;
-        }
+    .m-hd {
+      font-size: 11px; font-weight: 800;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--accent);
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 8px;
+    }
+    .m-hd::after { content: ''; flex: 1; height: 2px; background: var(--rule); }
 
-        /* CONTACT INFO */
-        .contact-list {
-            list-style: none;
-            margin-bottom: 40px;
-        }
+    .profil {
+      font-size: 11.5px; line-height: 1.6; color: #374151;
+      text-align: justify;
+    }
 
-        .contact-list li {
-            margin-bottom: 15px;
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--text-muted);
-            word-break: break-word;
-        }
+    .proj-card {
+      background: var(--bg-side);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 5px 5px 0;
+      padding: 12px 16px;
+    }
+    .proj-top {
+      display: flex; justify-content: space-between;
+      align-items: baseline; margin-bottom: 6px;
+    }
+    .proj-name { font-size: 12.5px; font-weight: 800; color: var(--ink); }
+    .proj-link { font-size: 9.5px; color: var(--accent-light); text-decoration: none; font-weight: 700; }
+    .proj-desc { font-size: 11.5px; line-height: 1.55; color: #374151; margin-bottom: 10px; text-align: justify; }
+    .proj-tech { display: flex; flex-wrap: wrap; gap: 5px; }
+    .tbadge {
+      background: var(--ink); color: #fff;
+      font-size: 8.5px; padding: 4px 8px; border-radius: 3px; font-weight: 600;
+    }
 
-        .contact-list a {
-            color: var(--text-muted);
-            text-decoration: none;
-        }
+    .xp-hrow { display: flex; justify-content: space-between; align-items: baseline; }
+    .xp-title { font-size: 12.5px; font-weight: 800; color: var(--ink); }
+    .xp-per   { font-size: 9.5px; color: var(--muted); font-weight: 600; }
+    .xp-org   { font-size: 10.5px; color: var(--accent-light); font-weight: 700; margin: 4px 0 8px; }
+    .xp-ul    { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+    .xp-ul li {
+      font-size: 11.5px; line-height: 1.55; color: #374151;
+      padding-left: 15px; position: relative;
+    }
+    .xp-ul li::before {
+      content: '▸'; position: absolute; left: 0;
+      color: var(--accent); font-size: 11px; top: 1px;
+    }
 
-        .icon {
-            font-weight: bold;
-            color: var(--primary);
-            width: 20px;
-        }
-
-        /* SKILLS */
-        .skill-group {
-            margin-bottom: 20px;
-        }
-
-        .skill-title {
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 8px;
-            color: var(--text-main);
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-
-        .tag {
-            background-color: #fff;
-            border: 1px solid var(--border);
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        /* EXPERIENCE & PROJECTS */
-        .item {
-            margin-bottom: 25px;
-        }
-
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 5px;
-        }
-
-        .item-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-main);
-        }
-
-        .item-subtitle {
-            font-size: 0.95rem;
-            color: var(--primary);
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
-
-        .item-date {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        .item-desc {
-            font-size: 0.95rem;
-            line-height: 1.5;
-            color: var(--text-muted);
-            margin-bottom: 10px;
-        }
-
-        ul.bullet-list {
-            padding-left: 20px;
-            margin-bottom: 10px;
-        }
-
-        ul.bullet-list li {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 5px;
-            line-height: 1.5;
-        }
-
-        /* PRINT CONFIG */
-        @media print {
-            body {
-                padding: 0;
-                background-color: #fff;
-            }
-            .cv-container {
-                box-shadow: none;
-                width: 210mm;
-                height: 297mm;
-            }
-            .print-btn {
-                display: none !important;
-            }
-        }
-
-        .print-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            font-family: inherit;
-        }
-        .print-btn:hover {
-            background-color: #1d4ed8;
-        }
-    </style>
+    @media print {
+      html, body { background: none; }
+      .page { margin: 0; box-shadow: none; }
+      .print-btn { display: none !important; }
+      @page { size: A4; margin: 0; }
+    }
+    
+    .print-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--ink);
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      font-family: 'DM Sans', sans-serif;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background 0.2s;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .print-btn:hover { background: var(--accent); }
+    .print-btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  </style>
 </head>
 <body>
 
-    <button class="print-btn" onclick="window.print()">🖨️ Télécharger PDF</button>
+<button class="print-btn" onclick="window.print()">
+  <svg viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+  Télécharger PDF
+</button>
 
-    <div class="cv-container">
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
-            
-            <h2>Contact</h2>
-            <ul class="contact-list">
-                <li><span class="icon">📍</span> Lomé, Togo (Agoè-Dikamé)</li>
-                <li><span class="icon">📞</span> +228 71391266</li>
-                <li><span class="icon">✉️</span> <a href="mailto:fadeletchagafou7@gmail.com">fadeletchagafou7@gmail.com</a></li>
-                <li><span class="icon">🔗</span> <a href="https://www.linkedin.com/in/fadèle-tchagafou-218436318/">LinkedIn</a></li>
-                <li><span class="icon">🐙</span> <a href="https://github.com/1Everlight">GitHub</a></li>
-                <li><span class="icon">🌍</span> <a href="#">Portfolio Web</a></li>
-            </ul>
+<div class="page">
 
-            <h2>Compétences Techniques</h2>
-            
-            <div class="skill-group">
-                <div class="skill-title">Langages</div>
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Java</span>
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">TypeScript</span>
-                    <span class="tag">PHP</span>
-                    <span class="tag">Dart</span>
-                </div>
-            </div>
+  <!-- ══ SIDEBAR ══ -->
+  <aside class="sidebar">
 
-            <div class="skill-group">
-                <div class="skill-title">Frameworks</div>
-                <div class="tags">
-                    <span class="tag">Angular</span>
-                    <span class="tag">Django</span>
-                    <span class="tag">Laravel</span>
-                    <span class="tag">Flutter</span>
-                </div>
-            </div>
-
-            <div class="skill-group">
-                <div class="skill-title">Bases de données</div>
-                <div class="tags">
-                    <span class="tag">MySQL</span>
-                    <span class="tag">PostgreSQL</span>
-                    <span class="tag">SQL Server</span>
-                </div>
-            </div>
-
-            <div class="skill-group">
-                <div class="skill-title">Outils</div>
-                <div class="tags">
-                    <span class="tag">Git & GitHub</span>
-                    <span class="tag">Postman</span>
-                    <span class="tag">Figma</span>
-                    <span class="tag">Angular CLI</span>
-                    <span class="tag">VS Code</span>
-                </div>
-            </div>
-
-            <div class="skill-group">
-                <div class="skill-title">Autres</div>
-                <div class="tags">
-                    <span class="tag">DevOps</span>
-                    <span class="tag">UI/UX Design</span>
-                    <span class="tag">Clean Architecture</span>
-                    <span class="tag">Agile/Scrum</span>
-                </div>
-            </div>
-
-            <h2>Langues</h2>
-            <div class="skill-group">
-                <div class="tags">
-                    <span class="tag">Français (Courant)</span>
-                    <span class="tag">Anglais (Technique)</span>
-                </div>
-            </div>
-        </aside>
-
-        <!-- MAIN CONTENT -->
-        <main class="main-content">
-            <header class="header">
-                <h1>Fadèle<br>TCHAGAFOU</h1>
-                <div class="title">Ingénieur Logiciel Junior</div>
-            </header>
-
-            <p class="summary">
-                Futur Ingénieur en Génie Logiciel passionné par l'écosystème web et mobile. Rigoureux, analytique et orienté solution, je conçois et développe des architectures logicielles propres, performantes et scalables. Fortes compétences en développement full-stack et modélisation de systèmes d'information.
-            </p>
-
-            <h2>Formation</h2>
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">Ingénieur des travaux informatiques (Génie Logiciel et S.I.)</div>
-                    <div class="item-date">2023 – 2026</div>
-                </div>
-                <div class="item-subtitle">IAI-TOGO (Institut Africain d'Informatique)</div>
-                <p class="item-desc">
-                    Excellence académique en algorithmie, conception de systèmes d'information, bases de données avancées, et ingénierie logicielle.
-                </p>
-            </div>
-
-            <h2>Projet Académique & Technique</h2>
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">Application de Gestion "Risque Crédit"</div>
-                    <div class="item-date">2023 - Présent</div>
-                </div>
-                <!-- <div class="item-subtitle">Full-Stack Developer</div> -->
-                <p class="item-desc">
-                    Développement de bout en bout d'une plateforme SaaS financière permettant de gérer et de suivre des prêts multiples pour des établissements de crédit.
-                </p>
-                <ul class="bullet-list">
-                    <li>Conception d'un tableau de bord analytique dynamique pour le suivi des statistiques clients en temps réel.</li>
-                    <li>Modélisation robuste d'une base de données relationnelle pour le suivi rigoureux des statuts de crédit (validation, échéances).</li>
-                    <li>Mise en œuvre d'une architecture propre séparant le back-end et le front-end.</li>
-                    <li>Réalisation d'une UI/UX moderne, fluide et responsive.</li>
-                </ul>
-                <div class="tags" style="margin-top: 10px;">
-                    <span class="tag">Django</span>
-                    <span class="tag">Angular</span>
-                    <span class="tag">PostgreSQL</span>
-                </div>
-            </div>
-
-            <h2>Projets Complémentaires</h2>
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">Portfolio Professionnel Angular</div>
-                    <div class="item-date">2026</div>
-                </div>
-                <p class="item-desc">
-                    Création d'un portfolio dynamique (Single Page Application) performant. Intégration d'un système multilingue (Signaux) et bascule de thèmes (Clair/Sombre) sans rechargement. Interface optimisée mobile-first avec SCSS moderne.
-                </p>
-                <div class="tags" style="margin-top: 10px;">
-                    <span class="tag">Angular 17+</span>
-                    <span class="tag">TypeScript</span>
-                    <span class="tag">SCSS</span>
-                </div>
-            </div>
-
-        </main>
+    <div class="av-wrap">
+      <div class="av-circle"><span>FT</span></div>
+      <div class="av-name">TCHAGAFOU<br>Fadèle</div>
+      <div class="av-badge">Ingénieur Logiciel</div>
     </div>
+
+    <div>
+      <div class="s-hd">Contact</div>
+      <div class="c-row">
+        <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+        <span>Lomé, Togo — Agoè-Dikamé</span>
+      </div>
+      <div class="c-row">
+        <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.32.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C9.61 21 3 14.39 3 6.5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.26.2 2.46.57 3.58a1 1 0 01-.25 1.01l-2.2 2.2z"/></svg></div>
+        <span>+228 71 39 12 66</span>
+      </div>
+      <div class="c-row">
+        <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+        <a href="mailto:fadeletchagafou7@gmail.com">fadeletchagafou7@gmail.com</a>
+      </div>
+      <div class="c-row">
+        <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
+        <a href="https://www.linkedin.com/in/fad%C3%A8le-tchagafou-218436318/" target="_blank">linkedin.com/in/fadèle-tchagafou</a>
+      </div>
+      <div class="c-row">
+        <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg></div>
+        <a href="https://github.com/1Everlight" target="_blank">github.com/1Everlight</a>
+      </div>
+      <div class="c-row">
+        <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#fff" stroke-width="2" fill="none"/></svg></div>
+        <a href="https://portfoliofadele.netlify.app/" target="_blank">portfoliofadele.netlify.app</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="s-hd">Compétences</div>
+      <div class="sk-group">
+        <div class="sk-label">Langages</div>
+        <div class="tags">
+          <span class="tag hi">Python</span><span class="tag hi">JavaScript</span>
+          <span class="tag hi">Java</span><span class="tag hi">PHP</span>
+          <span class="tag hi">Dart</span>
+        </div>
+      </div>
+      <div class="sk-group">
+        <div class="sk-label">Frameworks</div>
+        <div class="tags">
+          <span class="tag">Django</span><span class="tag">Angular</span>
+          <span class="tag">Laravel</span><span class="tag">Flutter</span>
+        </div>
+      </div>
+      <div class="sk-group">
+        <div class="sk-label">Bases de données</div>
+        <div class="tags">
+          <span class="tag">PostgreSQL</span><span class="tag">MySQL</span>
+          <span class="tag">SQL Server</span>
+        </div>
+      </div>
+      <div class="sk-group">
+        <div class="sk-label">Outils</div>
+        <div class="tags">
+          <span class="tag">Git / GitHub</span><span class="tag">Postman</span>
+          <span class="tag">Figma</span><span class="tag">VS Code</span>
+          <span class="tag">DevOps</span><span class="tag">UI/UX</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="s-hd">Formation</div>
+      <div class="edu-deg">Ing. Travaux Informatique</div>
+      <div class="edu-spec">Génie Logiciel & Systèmes d'Information</div>
+      <div class="edu-sch">IAI-TOGO</div>
+      <span class="edu-per">2023 – 2026 · En cours</span>
+    </div>
+
+    <div>
+      <div class="s-hd">Langues</div>
+      <div class="lang-row">
+        <span>Français (Courant)</span>
+        <div class="dots">
+          <div class="dot on"></div><div class="dot on"></div>
+          <div class="dot on"></div><div class="dot on"></div><div class="dot on"></div>
+        </div>
+      </div>
+      <div class="lang-row">
+        <span>Anglais (Technique)</span>
+        <div class="dots">
+          <div class="dot on"></div><div class="dot on"></div>
+          <div class="dot on"></div><div class="dot"></div><div class="dot"></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="s-hd">Soft Skills</div>
+      <div class="sk-group" style="margin-bottom: 0;">
+        <div class="tags">
+          <span class="tag">Résolution de problèmes</span>
+          <span class="tag">Analyse critique</span>
+          <span class="tag">Travail d'équipe</span>
+          <span class="tag">Veille technologique</span>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ══ MAIN ══ -->
+  <main class="main">
+
+    <div class="mh">
+      <div class="mh-name">TCHAGAFOU <span>Fadèle</span></div>
+      <div class="mh-sub">Ingénieur Logiciel Junior · Développement Web · Conception de Systèmes</div>
+    </div>
+
+    <div>
+      <div class="m-hd">Profil</div>
+      <p class="profil">
+        Étudiant en ingénierie logicielle, passionné par le développement web fullstack et la conception de systèmes d'information robustes. Maîtrise des architectures modernes (MVC, REST) et des pratiques DevOps. Capable de concevoir, développer et livrer des applications complètes — de l'analyse des besoins au déploiement. Autonome, orienté qualité et apprentissage continu, je recherche un stage, un emploi junior ou des missions freelance.
+      </p>
+    </div>
+
+    <div>
+      <div class="m-hd">Projets Techniques</div>
+      
+      <div class="proj-card" style="margin-bottom: 15px;">
+        <div class="proj-top">
+          <div class="proj-name">Plateforme de Gestion du Risque Crédit</div>
+          <a class="proj-link" href="https://github.com/1Everlight/projetValidation" target="_blank">↗ Voir sur GitHub</a>
+        </div>
+        <p class="proj-desc">
+          Application back-office destinée aux établissements financiers. Gestion multi-emprunteurs avec suivi dynamique des statuts de prêts, tableau de bord analytique interactif (taux de remboursement, alertes de risque, indicateurs clés) et architecture REST robuste et sécurisée.
+        </p>
+        <div class="proj-tech">
+          <span class="tbadge">Django</span>
+          <span class="tbadge">Angular</span>
+          <span class="tbadge">PostgreSQL</span>
+          <span class="tbadge">REST API</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-top">
+          <div class="proj-name">Portfolio Professionnel Dynamique</div>
+          <a class="proj-link" href="https://github.com/1Everlight/Portfolio" target="_blank">↗ Voir sur GitHub</a>
+        </div>
+        <p class="proj-desc">
+          Conception d'une Single Page Application ultra-fluide avec Angular 17. Architecture par composants (standalone) : mise en place de signaux (Signals) pour un système multilingue et d'un "Dark Mode". Composants UI stylisés avec SCSS pour un design garantissant ergonomie et performance.
+        </p>
+        <div class="proj-tech">
+          <span class="tbadge">Angular 17+</span>
+          <span class="tbadge">TypeScript</span>
+          <span class="tbadge">SCSS</span>
+          <span class="tbadge">Git</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div>
+      <div class="m-hd">Expérience & Projets Académiques</div>
+      <div class="xp-hrow">
+        <div class="xp-title">Développeur Fullstack — Projets Académiques & Personnels</div>
+        <div class="xp-per">2023 – Présent</div>
+      </div>
+      <div class="xp-org">IAI-TOGO · Auto-formation intensive</div>
+      <ul class="xp-ul">
+        <li>Conception et développement de l'application "Risque Crédit" de bout en bout.</li>
+        <li>Modélisation de systèmes de données relationnelles évolutives (UML, MCD, MLD).</li>
+        <li>Développement d'interfaces web "Responsive" garantissant l'accessibilité multi-plateformes.</li>
+        <li>Mise en œuvre des pratiques DevOps : versionnement (Git), automatisation du code et déploiement.</li>
+        <li>Exploration continue du développement mobile structuré avec Flutter et l'écosystème Dart.</li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="m-hd">Méthodologie & Atouts Techniques</div>
+      <ul class="xp-ul">
+        <li><strong>Clean Architecture :</strong> Application rigoureuse des principes SOLID et des Design Patterns pour concevoir un code modulaire, robuste et facilement maintenable.</li>
+        <li><strong>Méthodologies Agiles :</strong> Familiarité avec l'approche itérative (Scrum), la gestion de tâches et les bonnes pratiques de revues de code (Pull Requests).</li>
+        <li><strong>CI/CD & Déploiement :</strong> Compétences pratiques dans le déploiement continu de Single Page Applications modernes (Vercel, Netlify).</li>
+      </ul>
+    </div>
+
+  </main>
+</div>
 </body>
 </html>
