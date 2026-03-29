@@ -23,7 +23,7 @@ import { LanguageService } from '../../services/language.service';
         <div class="hero-image">
           <div class="image-wrapper">
             <!-- Used placeholder URL. Users can override with actual image -->
-            <img src="assets/images/profile-placeholder.png" alt="Fadèle TCHAGAFOU" (error)="onImgError($event)" />
+            <img src="assets/images/profile.jpeg" alt="Fadèle TCHAGAFOU" (error)="onImgError($event)" />
             <div class="glow"></div>
           </div>
         </div>
